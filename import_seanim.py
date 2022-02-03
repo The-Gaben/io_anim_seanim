@@ -180,7 +180,7 @@ def load_seanim(self, context, progress, filepath=""):
                             bone.parent is not None):
                         bone.matrix.translation = bone.parent.matrix @ offset
                     else:  # Use DELTA / RELATIVE results (ADDITIVE is unknown)
-                        bone.matrix_basis.translation = offset
+                        bone.matrix.translation = offset
 
                     # bone.keyframe_insert("location", index=-1, frame=key.frame, group=tag.name)  # nopep8
                     for axis, fcurve in enumerate(fcurves):
